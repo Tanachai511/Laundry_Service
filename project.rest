@@ -1,0 +1,37 @@
+@hostname = 127.0.0.1
+@port = 9000
+@serverUrl = http://{{hostname}}:{{port}}
+@baseUrl = http://{{hostname}}:{{port}}
+
+
+###
+GET {{baseUrl}}/payment
+
+
+###
+POST {{baseUrl}}/cart
+Content-Type: application/json
+
+{
+    "cart_id" : "1"  
+}
+
+###
+POST {{baseUrl}}/laundry
+Content-Type: application/json
+
+{
+    "type_service" : "wash",
+    "customer_phone" : "0999999999",
+    "delivery_date" : "July 20, 69 00:20:18",
+    "date_received" : "July 20, 69 00:20:18"
+}
+
+###
+POST {{baseUrl}}/payment
+Content-Type: application/json
+
+{
+    "price" : "250",
+    "payment_date" : "July 20, 69 00:20:18",
+}
